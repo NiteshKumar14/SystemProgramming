@@ -1,0 +1,11 @@
+/* hello world 
+ asdfghjkl
+ */
+ //hello
+ /* 8kgjhkdjfk 
+ rfhjhjff
+ rfwehfkewrf
+ rgfelkrgjel
+  */
+  string = "/* ******** */";
+  "//gfdsjg"
