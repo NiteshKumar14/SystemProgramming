@@ -20,11 +20,6 @@ char *str;
     
   
 }
-[ ] {
-   
- 
-
-}
 [\n ] {
      display(max,str);
     return; 
