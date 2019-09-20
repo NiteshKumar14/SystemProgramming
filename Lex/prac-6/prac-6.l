@@ -4,11 +4,16 @@
 %}
 Words [A-Za-z]+ 
 Lines [\n]
-Chars [a-zA-Z]
+
 %%
-{Chars} {chars++;}
-{Words} {words++;}
-{Lines} {lines++;}
+
+{Words} {words++; chars+=yyleng;}
+{Lines} {lines++; chars++;}
+.
+ { chars++;
+
+}
+
 %%
 int main()
 {   yyin=fopen("input.txt","r");

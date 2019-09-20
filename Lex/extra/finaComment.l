@@ -7,9 +7,7 @@ Knostar [^*]*
 Nostarfwd [^*/]
 Pstar [\*]+
 %%
-\"(\\|[^"\\])*\" { 
-    printf("%s", yytext);
-}
+
 "/*"{Knostar}{Pstar}({Nostarfwd}{Knostar}{Pstar})*"/" { ml++;}
 "//".* {sl++;} 
 %%

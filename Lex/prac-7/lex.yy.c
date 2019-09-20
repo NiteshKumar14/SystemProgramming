@@ -282,11 +282,11 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 4
-#define YY_END_OF_BUFFER 5
+#define YY_NUM_RULES 3
+#define YY_END_OF_BUFFER 4
 static yyconst short int yy_accept[9] =
     {   0,
-        0,    0,    5,    3,    2,    1,    1,    0
+        0,    0,    4,    3,    2,    1,    1,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -357,10 +357,10 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "prac-6.l"
+#line 1 "prac-7.l"
 #define INITIAL 0
-#line 2 "prac-6.l"
-    int words=0,chars=0,lines=0;
+#line 2 "prac-7.l"
+
 
 #line 366 "lex.yy.c"
 
@@ -513,10 +513,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 8 "prac-6.l"
+#line 5 "prac-7.l"
 
-
-#line 520 "lex.yy.c"
+#line 519 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -601,27 +600,31 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "prac-6.l"
-{words++; chars+=yyleng;}
+#line 6 "prac-7.l"
+{
+    int i,j;
+    for(i=yyleng;i>0;i--)
+    {
+        for(j=0;j<i;j++)
+        {
+            printf("%c",yytext[j]);
+        }
+        printf("\n");
+    }
+
+             }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "prac-6.l"
-{lines++; chars++;}
+#line 18 "prac-7.l"
+{return;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "prac-6.l"
-
-	YY_BREAK
-chars++;
-
-case 4:
-YY_RULE_SETUP
-#line 17 "prac-6.l"
+#line 20 "prac-7.l"
 ECHO;
 	YY_BREAK
-#line 625 "lex.yy.c"
+#line 628 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1507,12 +1510,11 @@ int main()
 	return 0;
 	}
 #endif
-#line 17 "prac-6.l"
+#line 20 "prac-7.l"
 
 int main()
-{   yyin=fopen("input.txt","r");
+{
     yylex();
-    printf("Chars:%d \n Words : %d \n Lines: %d",chars,words,lines);
     return 0;
 }
 int yywrap()
